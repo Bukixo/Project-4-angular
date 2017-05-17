@@ -1,0 +1,19 @@
+<!-- <div ng-include="'js/views/partials/nav.html'" ng-if="main.isAuthenticated()">
+</div> -->
+<!-- <div ng-include="'js/views/partials/visitor_nav.html'" ng-if="!main.isAuthenticated()">
+</div> -->
+
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <div class="card">
+      <h2>Style Feed!</h2>
+      <div class="card-block">
+        <div class="masonry-container">
+          <div ng-repeat="style in stylesIndex.all" ng-if="style.privacy === false" class="masonry">
+            <a ui-sref="stylesShow({ id: style.id })"><img ng-src="{{ style.image_src }}"></a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

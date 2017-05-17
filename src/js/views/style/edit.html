@@ -1,0 +1,34 @@
+<h1>EDIT</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form ng-submit="stylesEdit.update()">
+
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" ng-model="stylesEdit.style.name" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="products">product</label>
+          <input type="text" name="products" id="product" ng-model="stylesEdit.style.products" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="tags">tags</label>
+          <input type="text" name="tags" id="tags" ng-model="stylesEdit.style.tags" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="base64">Image</label>
+          <input type="file" base64 name="base64" id="base64" ng-model="stylesEdit.style.base64">
+        </div>
+
+        Would you like to keep your Style private?:
+        <input for="privacy" id="privacy" type="radio" ng-model="stylesEdit.style.privacy" value="true">Yes
+        <input for="privacy" id="privacy" type="radio" ng-model="stylesEdit.style.privacy" value="false">No
+
+        <button>Update</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,96 @@
+  <div class="row" id="login">
+    <div class="col-md-7 col-xs-12">
+      <div class="card">
+        <div class="row auth">
+          <div ng-hide="showDiv" >
+          <div class="toggle">
+
+              <form ng-submit="auth.register()" class="col-md-12 col-xs-12">
+                <h2>Register</h2>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="name" class="form-control col-sm-6" id="name" placeholder="Name" required ng-model="auth.user.name">
+                </div>
+                <div ng-messages="auth.user.name.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email" required ng-model="auth.user.email">
+                </div>
+                <div ng-messages="auth.user.email.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password" required ng-model="auth.user.password">
+                </div>
+                <div ng-messages="auth.user.password.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input class="form-control" id="password" placeholder="Password" required type="password" ng-model="login.user.password_confirmation">
+                </div>
+                <div ng-messages="auth.user.password_confirmation.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="base64">File input</label>
+                  <input type="file" base64 name="base64" id="base64" required ng-model="auth.user.base64">
+                  <p class="help-block">Upload a Profile image.</p>
+                </div>
+                <div ng-messages= "auth.user.base64.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+
+                <button type="submit" class="btn btn-default" ng-click="showDiv = !showDiv">Register</button>
+                <button class="btn btn-default" ng-click="showDiv = !showDiv">Already a user? Login here</button>
+              </form>
+            </div>
+          </div>
+
+          <div ng-hide="!showDiv" >
+            <div class="toggle">
+
+              <form ng-submit="auth.login()" class="col-md-12">
+                <h2>Login</h2>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email"  class="form-control col-sm-6" id="email" placeholder="Email" required ng-model="auth.credentials.email">
+                </div>
+                <div ng-messages="auth.email.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password" required ng-model="auth.credentials.password">
+                </div>
+                <div ng-messages="auth.password.$error" role="alert">
+                  <div ng-message="required">Please enter a value for this field.</div>
+                </div>
+
+                <button type="submit" class="btn btn-default">Login</button>
+                <!-- <button type="submit" class="btn btn-default" ng-click="showDiv = !showDiv">Not a Memeber? Why not Register</button> -->
+                <p>Not resgistered? <a ng-click="showDiv = !showDiv">Sign in here!</a></p>
+
+
+              </form>
+              <div class="col-md-12 ">
+                <button ng-click="auth.authenticate('github')" class="btn btn-default" >Login with Github</button>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5 col-sm-4">
+      <h2>"Did you know... </h2>
+      <p>The term “dreadlocks” comes from a movement of guerrilla warriors who vowed not to cut their hair until Haile Selassie, former Emperor of Ethiopia was released from exile after leading the resistance against the Italian invasion.</p><h2>""</h2>
+
+    </div>
+  </div>

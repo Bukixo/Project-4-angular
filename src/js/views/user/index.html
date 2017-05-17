@@ -1,0 +1,8 @@
+<div class="hero">
+  <h5>SHUKU</h5>
+  <div class="links">
+    <h3><a ui-sref-active="active" ui-sref="stylesIndex">Styles Feed</a></h3>
+    <h3><a ng-if="!main.isAuthenticated()" href="#login">Login</a></h3>
+    <h3><a ng-if="main.isAuthenticated()" ng-click="main.logout()">Logout</a></h3>
+  </div>
+</div>

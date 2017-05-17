@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+
+    <div class="card">
+      <div class="card-block">
+        <div class="col-md-6 md-offset-2 masonry-container-style-show">
+          <div class="masonry">
+            <img ng-src="{{ stylesShow.style.image_src }}">
+          </div>
+        </div>
+
+        <div class="col-md-3 ">
+         <div class="style-attributes">
+            <h2 ng-click="showStyle = !showStyle" >Name</h2>
+              <p ng-hide="!showStyle">{{ stylesShow.style.name }}</p>
+            <h2 ng-click="showProcedure = !showProcedure">Procedure</h2>
+              <p ng-hide="!showProcedure">{{ stylesShow.style.procedure }}</p>
+            <h2 ng-click="showProducts = !showProducts" >Products</h2>
+              <p ng-hide="!showProducts">{{ stylesShow.style.products }}</p>
+            <h2 ng-click="showDurability = !showDurability">Durability</h2>
+              <p ng-hide="!showDurability">{{ stylesShow.style.durability }}</p>
+
+            <p>Created by: <strong>{{ stylesShow.style.user.name }}</strong></p>
+
+            <h2 ng-click="stylesShow.toggleLikes()" ng-if="main.isAuthenticated() &&  !stylesShow.hasLiked()">{{stylesShow.style.likes.length}}  <span>&#9825;</span></h2>
+          </div>
+
+          <button ng-click="stylesShow.toggleLikes()" ng-if="main.isAuthenticated() && stylesShow.hasLiked()">Unlike</button>
+
+          <button ui-sref="stylesEdit({id: stylesShow.style.id})" ng-if="main.isAuthenticated() && main.currentUser.id === stylesShow.style.user.id">Edit</button>
+
+          <button ng-click="stylesShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === stylesShow.style.user.id">Delete</button>
+         </div>
+
+        <div class="comments">
+         <div class="row">
+           <div class="col-md-12" ng-if="main.isAuthenticated()">
+             <h2>Add Comment</h2>
+             <form ng-submit="stylesShow.addComment()">
+               <textarea type="text" name="body" ng-model="stylesShow.comment.body"></textarea>
+               <button>Create</button>
+             </form>
+           </div>
+
+           <div class="col-md-12">
+             <ul>
+               <li class="message" ng-repeat="comment in stylesShow.style.comments">{{ comment.body }} - <strong>{{ comment.user.name }}</strong><button ng-click="stylesShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+             </ul>
+           </div>
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>

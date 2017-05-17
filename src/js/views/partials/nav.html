@@ -1,0 +1,19 @@
+<div class="nav-box">
+  <h5>SHUKU</h5>
+  <nav class="shadow">
+    <ul>
+
+      <li><a ui-sref="stylesNew({ id: type.id })">New Style</a></li>
+
+      <li ><a ui-sref="typesIndex">view types</a></li>
+
+      <li><a ui-sref="usersShow({ id: main.currentUser.id })">Liked Styles</a></li>
+
+      <li><a ui-sref-active="active" ui-sref="stylesIndex">Styles Feed</a></li>
+
+      <li><a ng-if="main.isAuthenticated()" ng-click="main.logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+</div>
+<p class="nav-welcome"> Welcome back, <a ui-sref="usersEdit({ id: main.currentUser.id })">{{ main.currentUser.name }}</a></p>

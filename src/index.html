@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="project">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>SHUKU</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Josefin+Sans" rel="stylesheet">
+
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="MainCtrl as main">
+    <div ng-include="'js/views/partials/nav.html'" ng-if="main.isAuthenticated()">
+    </div>
+    <div class="hero" ng-if="!main.isAuthenticated()">
+      <h5>SHUKU</h5>
+      <div class="links">
+        <div>
+          <h3 ng-class="{tab == 'feed'}" ng-click="tab='feed'"><a  ui-sref-active="active" ui-sref="stylesIndex">Styles Feed</a></h3>
+          <h3 ng-class="{tab == 'login'}" ng-click="tab='login'"><a ui-sref-active="active" ui-sref="login">Login</a></h3>
+        </div>
+        <div class="row" ng-switch="tab">
+
+          <div ng-switch-when="feed">
+            <p>scroll to feed</p>
+            <div class="arrow bounce">
+              <a class="fa " href="#"></a>
+            </div>
+          </div>
+
+          <div ng-switch-when="login">
+            <p>scroll to login</p>
+            <div class="arrow bounce">
+              <a class="fa" href="#"></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <main ui-view class="container"></main>
+
+    <footer class="ft">&copy; <script type="text/javascript">
+      document.write(new Date().getFullYear());
+      </script> by <a class="ft" href="www.BukolaThompson.com">Buki</a> with 	&hearts; View on <a class="ft" href="https://github.com/Bukixo/Project-4-Frontend"> Github</a>
+    </footer>
+  </body>
+</html>

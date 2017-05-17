@@ -1,0 +1,141 @@
+
+.card{
+  padding: 87px;
+  margin: 50px;
+}
+
+.hero {
+  background-image:url("../images/hero.jpg");
+  position: relative;
+  height: 100vh;
+  width: auto;
+  background-position: center;
+  background-size: cover;
+  font-size: 50px;
+  // top: -0px;
+  text-align: center;
+  color: $brand-primary;
+  margin-top: -40px;
+  p{
+    font-size: 20px;
+  }
+
+
+  h5 {
+    font-size: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    color: yellow;
+    @include main-font;
+    h5 {
+      @media (max-width: 1200px) {
+        -moz-font-size:     200px;
+        -webkit-font-size:  200px;
+        font-size:          200px;
+      }
+      @media (max-width: 1000px) {
+        -moz-font-size:     150px;
+        -webkit-font-size:  150px;
+        font-size:          150px;
+    }
+    @media screen and (min-width:320px){
+      -moz-font-size:     100px;
+      -webkit-font-size:  100px;
+      font-size:          100px;
+    } // mobile portrait
+    @media screen and (min-width:480px){
+      -moz-font-size:     130px;
+      -webkit-font-size:  130px;
+      font-size:          130px;
+    } // mobile landscape
+
+  }
+}
+  .links {
+    h3{
+      @include third-font;
+    a {
+      color: white;
+    }
+    a:hover {
+      color: black;
+      text-decoration: none;
+    }
+    a:after {
+      color: black;
+    }
+      font-size: 80px;
+      @media (max-width: 1200px) {
+        -moz-font-size:     80px;
+        -webkit-font-size:  80px;
+        font-size:          80px;
+      }
+      @media (max-width: 1000px) {
+        -moz-font-size:     80px;
+        -webkit-font-size:  80px;
+        font-size:          80px;
+      }
+    }
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    color: yellow;
+
+  }
+  .auth {
+    @include center;
+    h3 {
+      color:white;
+      text-align: center;
+    }
+  }
+  .form-control {
+    box-shadow: none;
+    background-color:$body-background-color;
+
+  }
+}
+
+.style-attributes {
+  h2 {
+    cursor: pointer;
+  }
+}
+
+
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+  a { color: white; text-decoration: none;
+  }
+  .fa {
+  //   float:left;
+  // position:relative;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #ffffff transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+  }
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

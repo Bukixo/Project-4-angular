@@ -1,0 +1,59 @@
+
+<h2>New Hairstyle to save..</h2>
+
+<div class="row">
+  <div class="col-md-7 col-sm-12">
+    <div class="card">
+      <div class="card-block">
+        <form ng-submit="stylesNew.create()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" ng-model="stylesNew.style.name" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="product">product</label>
+            <input type="text" name="product" id="product" ng-model="stylesNew.style.product" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="durability">durability</label>
+            <input type="integer" name="durability" id="durability" ng-model="stylesNew.style.durability" class="form-control">
+          </div>
+
+
+          <div class="form-group">
+            <label for="tags">tags</label>
+            <input type="text" name="tags" id="tags" ng-model="stylesNew.style.tags" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="base64">Image</label>
+            <input type="file" base64 name="base64" id="base64" ng-model="stylesNew.style.base64">
+          </div>
+
+          <div class="form-group">
+            Would you like to keep your Style private?:
+
+            <input type="radio" ng-model="stylesNew.style.privacy" ng-value="true" class="form-control">Yes
+            <input type="radio" ng-model="stylesNew.style.privacy" ng-value="false" class="form-control">No
+          </div>
+
+          <div class="form-group">
+            What type of style does it fall into?:
+            <input type="radio" ng-model="stylesNew.style.type_id" id="types" name="type" class="form-control" value= "1"> Protective Hairstyle
+            <input type="radio" ng-model="stylesNew.style.type_id" id ="types" name="type" class="form-control" value= "2"> Natural Hairstyle
+          </div>
+
+          <button class="btn btn-primary">Update</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-6 col-sm-12">
+      <div class="didYouKnow">
+        <h2>"Did you know? ...</h2>
+        <p>Use an old t-shirt for drying. No microfiber or towel drying. Contrary to popular belief, microfiber rips the hair out. It acts like velcro to our tresses! Towel drying frizzes the hair. Either air dry or use an old t-shirt.</p>
+      </div>
+    </div>
+  </div>

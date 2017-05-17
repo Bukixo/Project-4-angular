@@ -1,0 +1,17 @@
+<!-- <div ng-include="'js/views/partials/nav.html'" ng-if="main.isAuthenticated()">
+</div> -->
+
+<h2> Your {{ typesShow.type.name }}'s </h2>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-block">
+        <div class="masonry-container">
+          <div ng-repeat="style in typesShow.type.styles" ng-if="style.user.id === main.currentUser.id" class="masonry">
+             <a ui-sref="stylesShow({ id: style.id })"><img ng-src="{{ style.image_src }}"></a>
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
