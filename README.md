@@ -2,7 +2,7 @@
 
 # What is SHUKU?
 
-[View it here!](https://cryptic-shelf-72611.herokuapp.com/ "Here!")
+[View it here!](https://thawing-journey-31360.herokuapp.com/login "Here!")
 
 I am really excited about how small ideas, combined technology shake up and disrupts industries in order to make life easier for us. That was something I really wanted to explore more in my final project.
 
